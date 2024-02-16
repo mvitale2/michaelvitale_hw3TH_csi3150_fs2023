@@ -116,3 +116,66 @@ header i {
   align-self: flex-start;
   margin-top: 10px;
 }
+
+/* locations */
+
+.locations .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.locations h2 {
+  color: var(--font-color-secondary);
+  font-weight: 800;
+  font-size: 60px;
+}
+
+.locations .container button {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.img-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 50px 0;
+}
+
+.img-cards .card-bg-img {
+  width: 32%;
+  margin: 0 20px;
+  width: 400px;
+  height: 500px;
+}
+
+.img-cards .card-bg-img img {
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.img-cards .card {
+  position: relative;
+}
+
+.img-cards .card p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffce00;
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+}
+
+.img-cards i {
+  font-size: 68px;
+  bottom: 1%;
+  left: 6%;
+  color: #ffce00;
+  position: absolute;
+}
