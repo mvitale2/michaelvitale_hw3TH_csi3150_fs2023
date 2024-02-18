@@ -7,11 +7,11 @@
   font-family: Playfair Display, Cambria, Cochin, Georgia, Times,
     "Times New Roman", serif;
   color: #fff;
-  --font-color-secondary: #ffce00;
 }
 
 body {
   background-color: #000;
+  overflow-x: hidden;
 }
 
 /* background images */
@@ -21,6 +21,7 @@ body {
   height: 100vh;
   object-fit: cover;
   overflow: hidden;
+  opacity: 0.72;
 }
 
 .hero .bg-img img {
@@ -35,6 +36,9 @@ body {
 
 section {
   position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
 }
 
 .container {
@@ -46,7 +50,7 @@ section {
 
 .read-btn {
   border: none;
-  background-color: var(--font-color-secondary);
+  background-color: #ffce00;
   color: #000;
   padding: 10px 30px;
   cursor: pointer;
@@ -54,6 +58,7 @@ section {
 }
 
 /* hero */
+
 header {
   position: absolute;
   top: 50%;
@@ -62,8 +67,16 @@ header {
   text-align: center;
 }
 
+header .logo {
+  height: 10%;
+}
+
+header .logo img {
+  height: 200px;
+}
+
 header h1 {
-  color: var(--font-color-secondary);
+  color: #ffce00;
   font-size: 150px;
   font-weight: 900;
 }
@@ -75,12 +88,16 @@ header p {
 
 header i {
   font-size: 106px;
-  color: var(--font-color-secondary);
+  color: #ffce00;
 }
 
 /*action */
+.action {
+  height: 70vh;
+}
+
 .action h2 {
-  color: var(--font-color-secondary);
+  color: #ffce00;
   font-weight: 800;
   font-size: 70px;
 }
@@ -101,9 +118,9 @@ header i {
 }
 
 .action .container .right {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  width: 50%;
   justify-content: center;
   align-items: center;
 }
@@ -126,7 +143,7 @@ header i {
 }
 
 .locations h2 {
-  color: var(--font-color-secondary);
+  color: #ffce00;
   font-weight: 800;
   font-size: 60px;
 }
@@ -145,22 +162,27 @@ header i {
   margin: 50px 0;
 }
 
-.img-cards .card-bg-img {
+.img-cards .card {
+  position: relative;
+}
+
+.img-cards .card .card-bg-img {
   width: 32%;
   margin: 0 20px;
   width: 400px;
   height: 500px;
+  position: relative;
+  background: #000;
 }
 
-.img-cards .card-bg-img img {
+/*gradient code retrived from https://stackoverflow.com/questions/19713813/fade-image-to-transparent-like-a-gradient */
+.img-cards .card .card-bg-img img {
   object-fit: cover;
   overflow: hidden;
+  position: absolute;
   width: 100%;
   height: 100%;
-}
-
-.img-cards .card {
-  position: relative;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4));
 }
 
 .img-cards .card p {
@@ -172,10 +194,229 @@ header i {
   left: 10%;
 }
 
-.img-cards i {
+.img-cards .card i {
   font-size: 68px;
   bottom: 1%;
   left: 6%;
   color: #ffce00;
   position: absolute;
+}
+
+/*tour info*/
+
+.tour-info .container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tour-info .container .left {
+  width: 60%;
+  padding: 0 50px;
+}
+
+.tour-info .container .left h2 {
+  color: #ffce00;
+  font-weight: 800;
+  font-size: 60px;
+  text-align: left;
+}
+
+.tour-info .container .right {
+  width: 40%;
+  padding-right: 100px;
+}
+
+.tour-info .container .right h6 {
+  font-size: 24px;
+  line-height: 70px;
+}
+
+/*stats*/
+
+.stats {
+  height: 70vh;
+}
+
+.stats .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.stats .container .bubble {
+  background: black;
+  padding: 50px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats .container .bubble h3 {
+  color: #ffce00;
+  font-weight: 700;
+  font-size: 52px;
+  text-align: left;
+  line-height: 100px;
+}
+
+.stats .container .bubble p {
+  text-transform: uppercase;
+}
+
+/*review*/
+
+.review {
+  height: 80vh;
+}
+
+.review .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 100%;
+}
+
+.review .container .portrait {
+  height: 200px;
+  border-radius: 50%;
+}
+
+.review .container q {
+  text-align: center;
+  font-size: 20px;
+}
+
+.review .container p {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.review .container i {
+  font-size: 106px;
+  color: #ffce00;
+}
+
+/*gallery*/
+
+.gallery .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .container .img-container {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .container .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/*contact*/
+
+.contact {
+  height: 60vh;
+}
+
+.contact .container {
+  display: flex;
+  width: 80%;
+  height: 80%;
+}
+
+.contact .container .left {
+  width: 50%;
+}
+
+.contact .container .left h2 {
+  color: #ffce00;
+  font-weight: 800;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+.contact .container .left ul {
+  list-style: none;
+  font-size: 20px;
+}
+
+.contact .container .left .social {
+  margin-top: 30px;
+}
+
+.contact .container .left .social i {
+  font-size: 38px;
+  color: #ffce00;
+}
+
+.contact .container .right {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  align-items: top;
+}
+
+.contact .container .right form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact .container .right form input {
+  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  border: rgba(255, 255, 255, 0.5) solid 3px;
+  border-radius: 5px;
+}
+
+.contact .container .right form #name,
+.contact .container .right form #email {
+  padding: 10px;
+  width: 500px;
+}
+
+.contact .container .right form #message {
+  padding: 10px;
+  width: 500px;
+  height: 150px;
+  padding-bottom: 118px;
+}
+
+.contact .container .right form .submit-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #ffce00;
+  color: #000;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+/*footer*/
+
+footer {
+  padding: 20px;
+}
+
+footer p {
+  color: #ffce00;
 }
